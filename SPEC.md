@@ -7,8 +7,8 @@ actual evidence; pending is a valid state. Keep explanations/help in
 ## Current stage
 
 - **Current feature:** APP-001.
-- **Status:** Portfolio homepage kept by learner for its responsive, clean layout; summary reviewed. Normal full check after marker update passed; GitHub cycle pending.
-- **Next step:** Commit/push and open the APP-001 PR for CI review.
+- **Status:** Portfolio homepage kept by learner for its responsive, clean layout; summary reviewed. Normal full check after marker update passed; PR #2 open; latest CI and learner merge decision pending.
+- **Next step:** Review the latest PR CI, then obtain the learner merge decision.
 - **Implementation marker:** `studio.json` now declares `implemented_through: 1` after verified full APP-001 success. Normal full check passed after the marker update.
 
 This repository owns application code. Server/proxy changes and production
@@ -26,7 +26,7 @@ Keep account actions honest about their unfinished state.
 | Visitor and concrete use situation | Employers reviewing Edgar's résumé, work and projects for IT opportunities. |
 | Reused IS117 brand, or name / promise / primary archetype | New identity: Edgar Steven Ojeda. Sage; technical learning and problem-solving. Promise: make the thinking behind the work clear. |
 | One visible choice and visitor benefit | Problem → approach → result shows complexity, technical choices and outcomes. Calm navy/teal, clear wording, original ESO SVG, shared style tokens. |
-| Own issue / branch / PR | [Issue #1](https://github.com/edgaroj52218/my-app-studio/issues/1); `codex/app-001-portfolio`; PR pending. |
+| Own issue / branch / PR | [Issue #1](https://github.com/edgaroj52218/my-app-studio/issues/1); `codex/app-001-portfolio`; [PR #2](https://github.com/edgaroj52218/my-app-studio/pull/2). |
 
 Résumé and specific project evidence have not been supplied. The homepage labels
 them as unavailable/planned, with no fabricated experience or download links.
@@ -85,7 +85,7 @@ customer research or claims that a timestamp proves learning.
 
 | Feature | Files / own issue / PR | Actual checks and learner observations | Kept / GitHub state |
 |---|---|---|---|
-| APP-001 | `app/brand.json`, `app/templates/base.html`, `app/templates/home.html`, `app/static/site.css`, `app/static/logo.svg`; [issue #1](https://github.com/edgaroj52218/my-app-studio/issues/1) | `python studio.py check --lesson APP-001`: Black/Pylint passed; foundation 96 passed, 2 skipped (learner reran in administrator PowerShell; saved passing receipt matched source before marker update); APP-001 contracts 2 passed; Chromium 2 passed. AI inspected 1440px desktop and 390px narrow layout. Learner identified fixed widths, excessive spacing and missing responsive design as potential overflow causes; learner observed content stacking at 390px without sideways scrolling and connected it to demonstrating responsive design to employers. | Learner keeps the responsive, clean layout and approved the summary. Local and unstaged; no PR/commit/push. Marker advanced to 1; normal full check passed after marker change (96 foundation, 2 contract and 2 Chromium tests passed; 2 skipped). PR/CI/merge pending. |
+| APP-001 | `app/brand.json`, `app/templates/base.html`, `app/templates/home.html`, `app/static/site.css`, `app/static/logo.svg`; [issue #1](https://github.com/edgaroj52218/my-app-studio/issues/1) | `python studio.py check --lesson APP-001`: Black/Pylint passed; foundation 96 passed, 2 skipped (learner reran in administrator PowerShell; saved passing receipt matched source before marker update); APP-001 contracts 2 passed; Chromium 2 passed. AI inspected 1440px desktop and 390px narrow layout. Learner identified fixed widths, excessive spacing and missing responsive design as potential overflow causes; learner observed content stacking at 390px without sideways scrolling and connected it to demonstrating responsive design to employers. | Learner keeps the responsive, clean layout and approved the summary. Implementation committed as `4ea0c1a` and pushed; [PR #2](https://github.com/edgaroj52218/my-app-studio/pull/2) open. Marker advanced to 1; normal full check passed after marker change (96 foundation, 2 contract and 2 Chromium tests passed; 2 skipped). [CI run](https://github.com/edgaroj52218/my-app-studio/actions/runs/42320637714) passed both `check` and `windows` for implementation commit `4ea0c1a`; merge pending. Recheck CI on the latest PR commit after publishing evidence links. |
 | APP-002 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 | APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 
