@@ -7,9 +7,9 @@ actual evidence; pending is a valid state. Keep explanations/help in
 ## Current stage
 
 - **Current feature:** APP-001.
-- **Status:** Neutral foundation; learner scope and decisions pending.
-- **Next step:** Confirm the local clone and SSH origin, run setup and try the page.
-- **Implementation marker:** `studio.json` starts at `implemented_through: 0`.
+- **Status:** Portfolio homepage kept by learner for its responsive, clean layout; summary reviewed. Normal full check after marker update passed; GitHub cycle pending.
+- **Next step:** Commit/push and open the APP-001 PR for CI review.
+- **Implementation marker:** `studio.json` now declares `implemented_through: 1` after verified full APP-001 success. Normal full check passed after the marker update.
 
 This repository owns application code. Server/proxy changes and production
 deployment are outside these three local-development lessons. Prepared helpers
@@ -23,10 +23,14 @@ Keep account actions honest about their unfinished state.
 
 | Decision | Agreement |
 |---|---|
-| Visitor and concrete use situation | Pending |
-| Reused IS117 brand, or name / promise / primary archetype | Pending |
-| One visible choice and visitor benefit | Pending |
-| Own issue / branch / PR | Pending |
+| Visitor and concrete use situation | Employers reviewing Edgar's résumé, work and projects for IT opportunities. |
+| Reused IS117 brand, or name / promise / primary archetype | New identity: Edgar Steven Ojeda. Sage; technical learning and problem-solving. Promise: make the thinking behind the work clear. |
+| One visible choice and visitor benefit | Problem → approach → result shows complexity, technical choices and outcomes. Calm navy/teal, clear wording, original ESO SVG, shared style tokens. |
+| Own issue / branch / PR | [Issue #1](https://github.com/edgaroj52218/my-app-studio/issues/1); `codex/app-001-portfolio`; PR pending. |
+
+Résumé and specific project evidence have not been supplied. The homepage labels
+them as unavailable/planned, with no fabricated experience or download links.
+Signup/login remain unfinished. Deployment is outside this assignment.
 
 **Keep when:** the agreed identity is visible and usable at desktop/narrow widths;
 full foundation + APP-001 checks pass; AI review and the learner's actual check
@@ -81,7 +85,7 @@ customer research or claims that a timestamp proves learning.
 
 | Feature | Files / own issue / PR | Actual checks and learner observations | Kept / GitHub state |
 |---|---|---|---|
-| APP-001 | Pending | Not run; learner contributions pending | Pending |
+| APP-001 | `app/brand.json`, `app/templates/base.html`, `app/templates/home.html`, `app/static/site.css`, `app/static/logo.svg`; [issue #1](https://github.com/edgaroj52218/my-app-studio/issues/1) | `python studio.py check --lesson APP-001`: Black/Pylint passed; foundation 96 passed, 2 skipped (learner reran in administrator PowerShell; saved passing receipt matched source before marker update); APP-001 contracts 2 passed; Chromium 2 passed. AI inspected 1440px desktop and 390px narrow layout. Learner identified fixed widths, excessive spacing and missing responsive design as potential overflow causes; learner observed content stacking at 390px without sideways scrolling and connected it to demonstrating responsive design to employers. | Learner keeps the responsive, clean layout and approved the summary. Local and unstaged; no PR/commit/push. Marker advanced to 1; normal full check passed after marker change (96 foundation, 2 contract and 2 Chromium tests passed; 2 skipped). PR/CI/merge pending. |
 | APP-002 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 | APP-003 | Pending | Unfinished; explicit contracts not yet passed | Pending |
 

@@ -1,16 +1,11 @@
 {
-  "name": "Your Project",
-  "audience": "Not chosen yet",
-  "archetype": "Not chosen yet",
-  "promise": "Not chosen yet",
-  "headline": "A small idea. A real application.",
-  "summary": "This working page is your starting point. Give it a purpose and a brand, then build accounts and permissions one feature at a time.",
-  "voice": ["Not chosen yet"],
-  "design_direction": "Not chosen yet",
-  "palette": {
-    "ink": "#182C34",
-    "paper": "#F6F5EF",
-    "accent": "#285A50",
-    "surface": "#FFFFFF"
-  }
+  "name": "Edgar Steven Ojeda",
+  "audience": "Employers reviewing my resume, work and projects for IT opportunities",
+  "archetype": "Sage",
+  "promise": "A clear view of my technical learning and problem-solving, through the problem, approach and result behind each project.",
+  "headline": "Curiosity meets practical problem-solving.",
+  "summary": "I’m Edgar Steven Ojeda. I’m pursuing opportunities in IT, with an interest in technical learning and understanding how to solve problems.",
+  "voice": ["Clear", "Thoughtful", "Straightforward"],
+  "design_direction": "Calm navy and teal, original ESO initials mark, generous spacing and organized project explanations. Missing material is labeled.",
+  "palette": {"ink": "#172E46", "paper": "#F4F7F6", "accent": "#116B65", "surface": "#FFFFFF"}
 }
