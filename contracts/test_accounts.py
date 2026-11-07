@@ -272,3 +272,39 @@ def test_browser_forms_have_a_recoverable_signup_login_logout_path(client):
         == 303
     )
     assert client.get("/dashboard", follow_redirects=False).status_code == 303
+
+
+def test_html_signup_rejects_role_and_duplicate_fields(client, settings):
+    """Hand-crafted form requests cannot bypass the public input contract."""
+    token = csrf(client)["X-CSRF-Token"]
+    response = client.post(
+        "/signup", data={**credentials(), "csrf_token": token, "role": "admin"}
+    )
+    assert response.status_code == 422
+    response = client.post(
+        "/signup",
+        content=f"username=learner&username=other&password={PASSWORD}&csrf_token={token}",
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
+    )
+    assert response.status_code == 422
+    with database.connect(settings) as connection:
+        assert connection.execute("SELECT COUNT(*) FROM users").fetchone()[0] == 0
+
+
+def test_oversized_html_form_is_rejected_without_echoing_password(client):
+    """Stop excessive form input before parsing and password hashing."""
+    response = client.post("/signup", data={"password": "x" * 9000})
+    assert response.status_code == 413
+    assert "x" * 129 not in response.text
+
+
+def test_expired_session_denies_html_and_api(client, settings):
+    """The actual private routes honor server-side expiration."""
+    register(client)
+    login(client)
+    with database.connect(settings) as connection:
+        connection.execute("UPDATE sessions SET expires_at = 0")
+    assert client.get("/api/me").status_code == 401
+    response = client.get("/dashboard", follow_redirects=False)
+    assert response.status_code == 303
+    assert response.headers["location"] == "/login"
