@@ -19,13 +19,13 @@ Accuracy approval is not proof of understanding. Label simulated trials explicit
 
 ## APP-002
 
-- Prediction: Pending.
-- Check interpretation: Pending.
-- Browser observation: Pending.
-- Keep decision: Pending.
-- Review: Pending.
-- Help/gaps: Pending.
-- Evidence links / next step: Keep APP-001 before agreeing this lesson.
+- Prediction: Learner paraphrase: validate the session before allowing access to a private dashboard; otherwise send the visitor to home/login/signup. After first login, retain session state so each private page does not require another login. Learner mentioned PHP or a current standard and described this as locally cached session state.
+- Check interpretation: Edgar explained that a hypothetical HTTP 200 means the request succeeded (200 OK). The automated replay test returned 401.
+- Browser observation: Edgar reported that after logging out, revisiting the dashboard immediately redirected him to login.
+- Keep decision: Edgar chose to keep the account flow because logout worked as intended and old session tokens could not bypass it in the replay test.
+- Review: Edgar reviewed the APP-002 summary before publication and replied “It's accurate.”
+- Help/gaps: AI clarified that this app uses Python/FastAPI, an HttpOnly cookie with a signed expiring JWT, and server-side session validation; a signature is not encryption. AI chose the login redirect for HTML and 401 for private API requests, implemented forms/API using the prepared password hashing, CSRF and revocation helpers, and tested the behavior. Learner authorized routine implementation without repeated design questions. Edgar approved the APP-002 summary for accuracy. After the AI terminal encountered the Windows symlink privilege blocker, the learner ran the full APP-002 check successfully; AI verified the matching receipt. AI explained how to replay a copied cookie and why success after logout would expose a session revocation bug. Edgar explained the HTTP status meaning. Edgar then tried the dashboard after logout and reported the redirect.
+- Evidence links / next step: [Issue #3](https://github.com/edgaroj52218/my-app-studio/issues/3). The normal full check passed with the APP-002 marker and the receipt matched the source. Next checkpoint is PR CI and a merge decision.
 
 ## APP-003
 
