@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Admin access required · {{ brand.name }}{% endblock %}
+{% block content %}
+<section class="panel member-panel">
+  <h1>Admin access required</h1>
+  <p>You’re signed in as a member. Only administrators can open this page.</p>
+  <a class="button" href="/dashboard">Back to dashboard</a>
+</section>
+{% endblock %}

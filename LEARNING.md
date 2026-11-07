@@ -29,10 +29,10 @@ Accuracy approval is not proof of understanding. Label simulated trials explicit
 
 ## APP-003
 
-- Prediction: Pending.
-- Check interpretation: Pending.
-- Browser observation: Pending.
-- Keep decision: Pending.
-- Review: Pending.
-- Help/gaps: Pending.
-- Evidence links / next step: Keep APP-002 before agreeing this lesson.
+- Prediction: Learner paraphrase: check the signed-in member’s role on a direct /api/admin request and send them back to the dashboard if they lack admin access. Edgar used “authentication” for this permission check.
+- Check interpretation: Edgar identified the risk that cached session state could still let a member access admin pages. He also suggested a sign-out token issue.
+- Browser observation: Edgar reported that as a member he saw an administrators-only message with a link back to the dashboard. After promoting the same test user with the terminal command, he could open the admin page. After demotion and refresh, Edgar saw “Admin access required” and the message that he was signed in as a member and only administrators could open the page.
+- Keep decision: Edgar would keep the behavior. The already-open admin page stays on screen after demotion, and the server checks the current role on the next protected request. Refreshing as a member showed “Admin access required.”
+- Review: Edgar reviewed the APP-003 summary before publication and replied “It's accurate.”
+- Help/gaps: AI explained authentication versus authorization and the API’s 403 response. AI implemented and tested the guard and a dashboard link on the browser denial page. The prediction comes from this chat. AI clarified that this check keeps the session active during demotion. The APP-002 replay test exercised logout. Edgar approved the APP-003 summary for accuracy.
+- Evidence links / next step: [Issue #5](https://github.com/edgaroj52218/my-app-studio/issues/5). Learner ran the full APP-003 check successfully. Learner inspected the member, promoted admin, and demoted member views. Keep decision recorded. The default full check passed with the APP-003 marker and its saved receipt matched the source. Next checkpoint is PR CI and the merge decision.

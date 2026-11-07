@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Administration · {{ brand.name }}{% endblock %}
+{% block content %}
+<section class="panel member-panel">
+  <h1>Administration</h1>
+  <p>Your account has administrator access.</p>
+  <p><a href="/api/admin">View admin status as JSON</a></p>
+  <a href="/dashboard">Back to dashboard</a>
+</section>
+{% endblock %}
